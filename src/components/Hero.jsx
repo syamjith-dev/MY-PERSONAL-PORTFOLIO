@@ -16,7 +16,7 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 
-import "./hero.css";
+import "./Hero.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
