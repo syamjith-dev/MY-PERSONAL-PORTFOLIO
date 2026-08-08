@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap");
+@import url("https://api.fontshare.com/v2/css?f[]=general-sans@200,300,400,500,600,700&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  --font-gloria: "Gloria Hallelujah", Arial, Helvetica, sans-serif;
+  --font-general: "General Sans", sans-serif;
+}
+
+
+@font-face {
+  font-family: "Clash Display";
+  src: url("./assets/fonts/ClashDisplay_Complete/ClashDisplay_Complete/Fonts/OTF/ClashDisplay-Semibold.otf") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Clash Light";
+  src: url("./assets/fonts/ClashDisplay_Complete/ClashDisplay_Complete/Fonts/WEB/fonts/ClashDisplay-Light.woff2") format("ttf");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@theme {
+  --font-clash: "Clash Light", sans-serif;
+  --font-clashligt: "Clash Variable", sans-serif;
+}
+
+
+
+html {
+  scroll-behavior: smooth;
+}
