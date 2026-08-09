@@ -9,12 +9,7 @@ import BottomBlur from "./BottomBlur";
 import heroVideo from "../assets/video/bg-white-hexagon-video.mp4";
 import myImage from "../assets/images/myImage.webp";
 
-import {
-  FaLinkedin,
-  FaGithub,
-  FaInstagram,
-  FaWhatsapp,
-} from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaInstagram, FaWhatsapp, FaAsterisk, FaPhone, FaEnvelope } from "react-icons/fa";
 
 import "./Hero.css";
 
@@ -205,7 +200,7 @@ const Hero = () => {
 
         {/* Overlay */}
 
-        <div className=" absolute inset-0 bg-linear-to-t from-[#eaeaea] to-[#eaeaeaaa] " />
+        <div className=" absolute inset-0 bg-linear-to-t from-[#eaeaea] to-[#eaeaea75] " />
         {/* Hero Content */}
 
         <div className="  relative z-10  flex  flex-col items-center   justify-center h-full  " >
@@ -266,26 +261,26 @@ const Hero = () => {
           <div className="flex gap-4 pt-5">
 
             <div className="social-icon flex justify-center items-center  w-12 h-12
-            rounded-lg shadow-lg border-2 border-[#0000001d] hover:bg-[#E27500] 
-            hover:text-white transition-all duration-500 ">
+            rounded-2xl shadow-lg border-2 border-[#0000001d] hover:bg-[#E27500] 
+            hover:text-white hover:border-0 transition-all duration-500 ">
               <FaLinkedin className="text-2xl" />
             </div>
 
             <div className="social-icon flex justify-center items-center  w-12 h-12
-            rounded-lg shadow-lg border-2 border-[#0000001d] hover:bg-[#E27500] 
-            hover:text-white transition-all duration-500">
+            rounded-2xl shadow-lg border-2 border-[#0000001d] hover:bg-[#E27500] 
+            hover:text-white hover:border-0 transition-all duration-500">
               <FaGithub className="text-2xl" />
             </div>
 
             <div className="social-icon flex justify-center items-center  w-12 h-12
-            rounded-lg shadow-lg border-2 border-[#0000001d] hover:bg-[#E27500] 
-            hover:text-white transition-all duration-500">
+            rounded-2xl shadow-lg border-2 border-[#0000001d] hover:bg-[#E27500] 
+            hover:text-white hover:border-0 transition-all duration-500">
               <FaInstagram className="text-2xl" />
             </div>
 
             <div className="social-icon flex justify-center items-center  w-12 h-12
-            rounded-lg shadow-lg border-2 border-[#0000001d] hover:bg-[#E27500] 
-            hover:text-white transition-all duration-500">
+            rounded-2xl shadow-lg border-2 border-[#0000001d] hover:bg-[#E27500] 
+            hover:text-white hover:border-0 transition-all duration-500">
               <FaWhatsapp className="text-2xl" />
             </div>
 
@@ -449,41 +444,79 @@ const Hero = () => {
       </section>
 
       {/* contact section */}
-      <section className="w-full h-auto mb-20 bg-[#eaeaea] flex flex-col justify-around items-center text-cente">
+      <section className="w-full h-auto bg-[#eaeaea] flex flex-col justify-around items-center text-cente">
         <h1 className="font-gloria lg:text-2xl">/Contact information</h1>
-        <h1 className="font-clash text-4xl font-semibold mt-2 lg:text-5xl">Lest's Get <span className="text-[#e27500]">Started</span></h1>
         <h1 className="font-clash text-4xl font-semibold mt-6 lg:text-5xl">How can I help?</h1>
         <p className="text-[#6d6d6d] text-center font-clashligt">I would love to hear more about your project or company.</p>
-            
-            <div className=" w-[90%] h-auto mt-10 md:h-[40vh] lg:w-[80%] lg:h-[55vh]
-            grid grid-cols-1 sm:grid-col-2 md:grid-cols-2">
-              <div className="">
-                <form action="" className="flex flex-col pl-[5%] gap-4">
 
-                  <label className="font-general text-[#333333]">Your Full Name*</label>
-                  <input type="text" placeholder="Smith"
-                  className="w-[90%] h-10 rounded-md pl-2 border-b border-[#6d6d6d]"/>
+        <div className=" w-[90%] h-auto mt-10 md:h-[40vh] lg:w-[55%] lg:h-[55vh]
+            grid grid-cols-1 sm:grid-col-2 md:grid-cols-2 mb-25">
 
-                  <label className="font-general text-[#333333]">Your E-mail*</label>
-                  <input type="email" placeholder="mail@gmail.com"
-                  className="w-[90%] h-10 rounded-md pl-2 border-b border-[#6d6d6d]"/>
+          <div className="">
+            <form action="" className="flex flex-col pl-[5%] gap-4">
 
-                  <label className="font-general text-[#333333]">More Info*</label>
-                  <textarea type="email" placeholder="What's this about?"
-                  className="w-[90%] h-10 rounded-md pl-2 border-b border-[#6d6d6d]"/>
+              <label className="font-general text-[#333333]">Your Full Name*</label>
+              <input type="text" placeholder="Smith"
+                className="w-[90%] h-10 rounded-md pl-2 border border-[#6d6d6d] shadow-md " />
 
-                  <button type="submit"
-                  className="bg-[#e27500] w-[90%] h-10 rounded-md text-white 
+              <label className="font-general text-[#333333]">Your E-mail*</label>
+              <input type="email" placeholder="mail@gmail.com"
+                className="w-[90%] h-10 rounded-md pl-2 border border-[#6d6d6d] shadow-md" />
+
+              <label className="font-general text-[#333333]">More Info*</label>
+              <textarea type="email" placeholder="What's this about?"
+                className="resize-none w-[90%] h-30 rounded-md p-2 border border-[#6d6d6d] shadow-md " />
+
+              <button type="submit"
+                className="bg-[#e27500] w-[90%] h-10 rounded-md text-white 
                   font-clash">Submit</button>
 
-                </form>
-              </div>
-              <div className="flex justify-around">
-                <img src={myImage} alt="my image" 
-                className="rounded-2xl mt-5
-                md:w-60 md:mt-0 lg:w-80"/>
-              </div>
+            </form>
+          </div>
+          <div className="relative flex justify-around lg:w-80 lg:ml-15">
+             <img src={myImage} alt="my image"
+               className="relative rounded-2xl mt-5 md:w-60 md:mt-0 lg:w-80"/>
+
+            {/* Overlay */}
+            <div className=" absolute inset-0 bg-linear-to-t from-[#0000009f] to-[#00000000] h-100 mt-5 
+            rounded-2xl p-4">
+              <p className="text-[#eaeaea] font-general mt-70">If the work above fits what you need, send me a note. Share the goal, a link, 
+                budget range, and when you want to start. I’ll reply with the next step.</p>
+              <p className="text-[#eaeaea] font-gloria mt-4">Syamjith</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* end footer section */}
+      <section className="w-full h-[50vh] flex flex-col justify-center">
+        <div class="w-full overflow-hidden whitespace-nowrap h-20">
+          <div class="flex w-full animate-marquee text-4xl " >
+            <span class="flex items-center gap-2 font-clash mx-4 font-bold text-[#333333]
+            lg:text-6xl">
+              <FaAsterisk /> Let's work together <FaAsterisk /> </span>
+            <span class="flex items-center gap-2 font-clash mx-4 font-bold text-[#333333]
+            lg:text-6xl">
+              <FaAsterisk /> Let's work together <FaAsterisk /> </span>
+            <span class="flex items-center gap-2 font-clash mx-4 font-bold text-[#333333]
+            lg:text-6xl">
+              <FaAsterisk /> Let's work together <FaAsterisk /> </span>
+            <span class="flex items-center gap-2 font-clash mx-4 font-bold text-[#333333]
+            lg:text-6xl">
+              <FaAsterisk /> Let's work together <FaAsterisk /> </span>
+            <span class="flex items-center gap-2 font-clash mx-4 font-bold text-[#333333]
+            lg:text-6xl">
+              <FaAsterisk /> Let's work together <FaAsterisk /> </span>
+          </div>
+        </div>
+        <div className="w-full flex flex-col items-center mt-8">
+          <p className="flex items-center gap-2 font-semibold font-clash"><FaPhone />+91 9447572837</p>
+          <p className="flex items-center gap-2 font-semibold font-clash"><FaEnvelope />syamjithLoq@mail.com</p>
+        </div>
+        <div className="flex justify-between mt-8 ">
+          <p className="mx-5 font-medium font-general text-[13px]">2026</p>
+          <p className="mx-5 font-medium font-general text-[13px]">All Rights Reserved</p>
+        </div>
       </section>
 
       <NavBar />
