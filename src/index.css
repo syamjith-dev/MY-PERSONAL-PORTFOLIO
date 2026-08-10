@@ -35,12 +35,19 @@ html {
 @keyframes marquee {
   from {
     transform: translateX(0);
+    opacity: .5;
   }
   to {
-    transform: translateX(-50%);
+    transform: translateX(-100%);
+    opacity: .5;
   }
 }
 
 .animate-marquee {
-  animation: marquee 5s linear infinite;
+  animation: marquee 8s linear infinite;
+}
+
+.contact-img {
+  background: url('src/assets/images/myImage.webp');
+  background-size: cover;
 }

@@ -444,52 +444,49 @@ const Hero = () => {
       </section>
 
       {/* contact section */}
-      <section className="w-full h-auto bg-[#eaeaea] flex flex-col justify-around items-center text-cente">
+      <section id="contact" className="w-full h-auto bg-[#eaeaea] flex flex-col justify-around items-center text-cente">
         <h1 className="font-gloria lg:text-2xl">/Contact information</h1>
         <h1 className="font-clash text-4xl font-semibold mt-6 lg:text-5xl">How can I help?</h1>
         <p className="text-[#6d6d6d] text-center font-clashligt">I would love to hear more about your project or company.</p>
 
-        <div className=" w-[90%] h-auto mt-10 md:h-[40vh] lg:w-[55%] lg:h-[55vh]
-            grid grid-cols-1 sm:grid-col-2 md:grid-cols-2 mb-25">
+        <div className=" w-[90%] h-auto mt-10 md:h-[55vh] lg:w-[80%] lg:h-[55vh]
+            grid grid-cols-1 sm:grid-col-2 md:grid-cols-2 mb-">
 
           <div className="">
-            <form action="" className="flex flex-col pl-[5%] gap-4">
+            <form action="" className="flex flex-col pl-[5%] gap-4 ">
 
               <label className="font-general text-[#333333]">Your Full Name*</label>
               <input type="text" placeholder="Smith"
-                className="w-[90%] h-10 rounded-md pl-2 border border-[#6d6d6d] shadow-md " />
+                className="w-[90%] h-10 rounded-md pl-2 bg-white shadow-md " />
 
               <label className="font-general text-[#333333]">Your E-mail*</label>
               <input type="email" placeholder="mail@gmail.com"
-                className="w-[90%] h-10 rounded-md pl-2 border border-[#6d6d6d] shadow-md" />
+                className="w-[90%] h-10 rounded-md pl-2 bg-white shadow-md" />
 
               <label className="font-general text-[#333333]">More Info*</label>
               <textarea type="email" placeholder="What's this about?"
-                className="resize-none w-[90%] h-30 rounded-md p-2 border border-[#6d6d6d] shadow-md " />
+                className="resize-none w-[90%] h-30 rounded-md p-2 bg-white shadow-md " />
 
               <button type="submit"
-                className="bg-[#e27500] w-[90%] h-10 rounded-md text-white 
-                  font-clash">Submit</button>
+                className="bg-[#e27500] w-[90%] h-10 rounded-md text-white shadow-md cursor-pointer
+                  font-clash mb-5">Submit</button>
 
             </form>
           </div>
-          <div className="relative flex justify-around lg:w-80 lg:ml-15">
-             <img src={myImage} alt="my image"
-               className="relative rounded-2xl mt-5 md:w-60 md:mt-0 lg:w-80"/>
-
-            {/* Overlay */}
-            <div className=" absolute inset-0 bg-linear-to-t from-[#0000009f] to-[#00000000] h-100 mt-5 
-            rounded-2xl p-4">
-              <p className="text-[#eaeaea] font-general mt-70">If the work above fits what you need, send me a note. Share the goal, a link, 
-                budget range, and when you want to start. I’ll reply with the next step.</p>
-              <p className="text-[#eaeaea] font-gloria mt-4">Syamjith</p>
+          <div className=" flex justify-center">
+            <div className="contact-img relative w-80 h-107 rounded-2xl">
+              <div className="absolute inset-0 bg-linear-to-t from-[#00000082] to-transparent rounded-2xl p-6">
+                <p className="text-[#eaeaea] font-general mt-60">If the work above fits what you need, send me a note. Share the goal, a link,
+                  budget range, and when you want to start. I’ll reply with the next step.</p>
+                <p className="text-[#eaeaea] font-gloria mt-4">Syamjith</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* end footer section */}
-      <section className="w-full h-[50vh] flex flex-col justify-center">
+      <section className="w-full h-[50vh] flex flex-col justify-center bg-[#eaeaea]">
         <div class="w-full overflow-hidden whitespace-nowrap h-20">
           <div class="flex w-full animate-marquee text-4xl " >
             <span class="flex items-center gap-2 font-clash mx-4 font-bold text-[#333333]
@@ -513,14 +510,14 @@ const Hero = () => {
           <p className="flex items-center gap-2 font-semibold font-clash"><FaPhone />+91 9447572837</p>
           <p className="flex items-center gap-2 font-semibold font-clash"><FaEnvelope />syamjithLoq@mail.com</p>
         </div>
-        <div className="flex justify-between mt-8 ">
+        <div className="flex justify-between mt-8 h-30 ">
           <p className="mx-5 font-medium font-general text-[13px]">2026</p>
           <p className="mx-5 font-medium font-general text-[13px]">All Rights Reserved</p>
         </div>
       </section>
 
       <NavBar />
-      <BottomBlur />
+      <BottomBlur/>
 
     </div>
   );
