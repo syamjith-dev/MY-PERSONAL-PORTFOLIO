@@ -5,11 +5,11 @@
 }
 
 .contact-img {
-  background: url('src/assets/images/myImage.webp');
+  background: url('../assets/images/myImage.webp');
   background-size: cover;
 }
 
 .hero-img {
-  background: url('src/assets/images/myImage.webp');
+  background: url('../assets/images/myImage.webp');
   background-size: cover;
 }

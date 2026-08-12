@@ -481,11 +481,11 @@ const Hero = () => {
         <h1 className="font-clash text-4xl font-semibold mt-6 lg:text-5xl">How can I help?</h1>
         <p className="text-[#6d6d6d] text-center font-clashligt">I would love to hear more about your project or company.</p>
 
-        <div className=" w-[90%] h-auto mt-10 md:h-[55vh] lg:w-[80%] lg:h-[55vh]
+        <div className=" w-[90%] h-auto mt-10 md:h-[55vh] lg:w-[60%] lg:h-[50vh]
             grid grid-cols-1 sm:grid-col-2 md:grid-cols-2 mb-">
 
           <div className="ml-2">
-            <form action="" className="flex flex-col  gap- ">
+            <form action="" className="flex flex-col  ">
 
               <label className="font-general text-[#333333]">Your Full Name*</label>
               <input type="text" placeholder="Smith"
