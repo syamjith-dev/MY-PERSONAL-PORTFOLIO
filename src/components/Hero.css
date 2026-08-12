@@ -3,3 +3,13 @@
   perspective: 1000px;
   will-change: transform;
 }
+
+.contact-img {
+  background: url('src/assets/images/myImage.webp');
+  background-size: cover;
+}
+
+.hero-img {
+  background: url('src/assets/images/myImage.webp');
+  background-size: cover;
+}

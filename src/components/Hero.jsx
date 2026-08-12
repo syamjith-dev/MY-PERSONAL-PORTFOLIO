@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -14,11 +14,18 @@ import { FaLinkedin, FaGithub, FaInstagram, FaWhatsapp, FaAsterisk, FaPhone, FaE
 import "./Hero.css";
 
 import skills from "./data/SkillsData";
-import projects from './data/PortfolioData'
+import projects from './data/PortfolioData';
+import FaqData from './data/FaqData';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
+
+  const [activeId, setActiveId] = useState(null);
+
+  const handleFAQ = (id) => {
+    setActiveId(activeId === id ? null : id);
+  };
 
   const containerRef = useRef(null);
   const heroSectionRef = useRef(null);
@@ -28,6 +35,8 @@ const Hero = () => {
   const aboutImageRef = useRef(null);
   const servicesRef = useRef(null);
   const servicesHeadingRef = useRef(null);
+  const faqRef = useRef(null);
+
 
   useLayoutEffect(() => {
 
@@ -165,7 +174,27 @@ const Hero = () => {
         },
       });
 
+      // FAQ animation
+      const faqItems = faqRef.current.children;
+
+      gsap.from(faqItems, {
+        opacity: 0,
+        y: 100,
+        scale: 0.95,
+        duration: 0.8,
+        stagger: 0.15,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: faqRef.current,
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        },
+      });
+
+
     }, containerRef);
+
+
 
 
     return () => ctx.revert();
@@ -190,7 +219,7 @@ const Hero = () => {
           muted
           loop
           playsInline
-          className="absolute inset-0 w-full h-screen -top-40 object-cover"
+          className="absolute inset-0 w-full h-screen  object-cover"
         >
           <source
             src={heroVideo}
@@ -203,18 +232,19 @@ const Hero = () => {
         <div className=" absolute inset-0 bg-linear-to-t from-[#eaeaea] to-[#eaeaea75] " />
         {/* Hero Content */}
 
-        <div className="  relative z-10  flex  flex-col items-center   justify-center h-full  " >
-          <img ref={heroImageRef}
+        <div className="relative z-10  flex  flex-col items-center justify-center h-screen" >
+          <div ref={heroImageRef}
             src={myImage}
-            alt="portfolio-img" className=" hero-image  w-60 h-70  object-cover rounded-2xl " />
+            alt="portfolio-img" className="hero-img hero-image  w-60 h-70  object-cover rounded-2xl shadow-2xl " >
+          </div>
 
-          <h1 ref={heroTextRef} className="  text-5xl pt-4 font-bold sm:text-7xl sm:text-[#333333] sm:font-clash " >
+          <p ref={heroTextRef} className="text-4xl pt-4 font-bold sm:text-7xl sm:text-[#333333] sm:font-clash " >
             SYAMJITH
-          </h1>
-
-          <p ref={heroTextRef} className="text-2xl pt-4 font-clash">
-            Web developer
           </p>
+
+          <h1 ref={heroTextRef} className="text-2xl pt-4 font-clash text-center">
+            Freelance Web Developer in Kannur, Kerala
+          </h1>
         </div>
       </section>
 
@@ -244,12 +274,8 @@ const Hero = () => {
 
           <p
             className=" text-[#6d6d6d] py-5 font-clashlight ">
-            I'm a passionate web developer who builds
-            modern, responsive websites using HTML, CSS,
-            and JavaScript. I'm currently expanding my
-            skills in backend development with Node.js
-            and creating dynamic user interfaces using
-            React.
+            I'm Syamjith, a freelance web developer based in Kannur, Kerala. I build modern,
+            responsive websites and web applications for businesses, professionals and individuals.
           </p>
 
           <button
@@ -283,12 +309,8 @@ const Hero = () => {
             hover:text-white hover:border-0 transition-all duration-500">
               <FaWhatsapp className="text-2xl" />
             </div>
-
           </div>
-
         </div>
-
-
         {/* RIGHT IMAGE */}
 
         <div className="hidden lg:flex" >
@@ -304,7 +326,7 @@ const Hero = () => {
       <section id="services"
         className=" w-full h-auto bg-[#eaeaea] flex flex-col  items-center lg:h-screen" >
         <h1 ref={servicesHeadingRef}
-          className="font-gloria text-4xl pt-15 lg:pt-45 px-15 ">Our services for you</h1>
+          className="font-gloria text-2xl pt-15 lg:pt-45 px-15 md:text-4xl ">Our services for you</h1>
 
         <div ref={servicesRef} className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6
         w-[90%] h-auto sm:w-[80%]
@@ -342,79 +364,57 @@ const Hero = () => {
         id="skill"
         className="  w-full  min-h-screen bg-[#eaeaea]  flex  flex-col  items-center  py-20   px-4  "  >
 
-        {/* Heading */}
-
         <h1
-          className="  font-gloria text-4xl sm:text-5xl text-[#333333]  mb-10  " >
+          className="  font-gloria text-4xl sm:text-3xl text-[#333333]  mb-10  " >
           Skills
         </h1>
-        {/* Skills Container */}
 
         <div
           className=" w-full  max-w-6xl bg-[#eaeaea]   rounded-2xl  px-6 py-10 sm:px-10  sm:py-12 md:px-14  md:py-14 grid  
         grid-cols-2  sm:grid-cols-3  lg:grid-cols-4 gap-y-12  gap-x-6  " >
-
           {skills.map((skill, index) => {
-
             const Icon = skill.icon;
-
             return (
-
               <div
                 key={skill.name}
-                className=" flex flex-col items-center  justify-center  gap-3  group  cursor-pointer 
+                className="faq-item flex flex-col items-center  justify-center  gap-3  group  cursor-pointer 
                " >
-
                 {/* Icon */}
-
                 <Icon
                   className="    text-5xl sm:text-6xl transition-all
                   duration-300  group-hover:-translate-y-2  group-hover:scale-110"
                   style={{ color: skill.color, }} />
-
                 {/* Name */}
                 <h2
                   className=" text-sm  sm:text-base  md:text-lg font-medium  text-[#333333] text-center">
                   {skill.name}
                 </h2>
-
               </div>
-
             );
-
           })}
-
         </div>
       </section>
       {/* portfolio projects section  */}
       <section id="portfolio" className="w-full min-h-screen bg-[#eaeaea] px-5 py-20">
         <div className="max-w-6xl mx-auto">
 
-          <h1 className="font-gloria text-4xl sm:text-5xl mb-12">
-            Selected Work
+          <h1 className="font-gloria text-4xl sm:text-3xl mb-12">
+            /Selected Work
           </h1>
-
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-
             {projects.map((project) => (
               <div key={project.id} className="bg-white rounded-2xl overflow-hidden shadow-lg">
-
                 <img src={project.image} alt={project.title} className="w-full h-72 object-fit" />
-
                 <div className="p-6">
-
                   <p className="text-sm text-[#E27500] font-medium">
                     {project.category}
                   </p>
-
                   <h2 className="text-3xl font-clash font-semibold mt-2">
                     {project.title}
                   </h2>
-
                   <p className="text-[#6d6d6d] mt-3">
                     {project.description}
                   </p>
-
                   <div className="flex flex-wrap gap-2 mt-5">
                     {project.technologies.map((tech) => (
                       <span key={tech} className="px-3 py-1 bg-[#eaeaea] rounded-full text-sm">
@@ -422,53 +422,85 @@ const Hero = () => {
                       </span>
                     ))}
                   </div>
-
                   <div className="flex gap-4 mt-6">
                     <a href={project.liveLink} target="_blank" rel="noreferrer" className="px-5 py-2 bg-[#333333] text-white rounded-full">
                       Live Demo
                     </a>
-
                     <a href={project.githubLink} target="_blank" rel="noreferrer" className="px-5 py-2 border border-[#333333] rounded-full">
                       GitHub
                     </a>
                   </div>
-
                 </div>
-
               </div>
             ))}
-
           </div>
 
+        </div>
+      </section>
+      {/* faq section */}
+      <section className="w-full h-auto flex p-5 flex-col items-center bg-[#eaeaea]">
+        <p className="font-gloria">/Common questions and answers</p>
+        <p className="font-clash text-4xl mt-5 font-semibold text-[#333333]">Frequently Asked
+          <span className="text-[#e27500]">Questions</span></p>
+
+        <div ref={faqRef} className="w-full mt-5 lg:w-[80%]">
+          {FaqData.map((faq) => (
+            <div
+              key={faq.id}
+              onClick={() => handleFAQ(faq.id)}
+              className="faqItems mt-4 py-3 px-6 border border-gray-400 rounded-2xl font-general shadow-md cursor-pointer">
+              <div className="flex items-center justify-between gap-5">
+                <h3 className="font-medium">{faq.question}</h3>
+                <span
+                  className={`text-2xl transition-transform duration-300 ${activeId === faq.id ? "rotate-45" : "rotate-0"
+                    }`}
+                >
+                  +
+                </span>
+              </div>
+              <div
+                className={`grid transition-all duration-500 ease-in-out ${activeId === faq.id
+                  ? "grid-rows-[1fr] opacity-100 mt-5"
+                  : "grid-rows-[0fr] opacity-0 mt-0"
+                  }`}
+              >
+                <div className="overflow-hidden">
+                  <p className="pb-4 text-[#333333] leading-relaxed font-general">
+                    {faq.answer}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
       {/* contact section */}
       <section id="contact" className="w-full h-auto bg-[#eaeaea] flex flex-col justify-around items-center text-cente">
-        <h1 className="font-gloria lg:text-2xl">/Contact information</h1>
+        <h1 className="font-gloria lg:text-2xl mt-5">/Contact information</h1>
         <h1 className="font-clash text-4xl font-semibold mt-6 lg:text-5xl">How can I help?</h1>
         <p className="text-[#6d6d6d] text-center font-clashligt">I would love to hear more about your project or company.</p>
 
         <div className=" w-[90%] h-auto mt-10 md:h-[55vh] lg:w-[80%] lg:h-[55vh]
             grid grid-cols-1 sm:grid-col-2 md:grid-cols-2 mb-">
 
-          <div className="">
-            <form action="" className="flex flex-col pl-[5%] gap-4 ">
+          <div className="ml-2">
+            <form action="" className="flex flex-col  gap- ">
 
               <label className="font-general text-[#333333]">Your Full Name*</label>
               <input type="text" placeholder="Smith"
-                className="w-[90%] h-10 rounded-md pl-2 bg-white shadow-md " />
+                className="w-[96%] h-10 rounded-md  bg-white shadow-md mb-4" />
 
               <label className="font-general text-[#333333]">Your E-mail*</label>
               <input type="email" placeholder="mail@gmail.com"
-                className="w-[90%] h-10 rounded-md pl-2 bg-white shadow-md" />
+                className="w-[96%] h-10 rounded-md pl-2 bg-white shadow-md mb-4" />
 
               <label className="font-general text-[#333333]">More Info*</label>
               <textarea type="email" placeholder="What's this about?"
-                className="resize-none w-[90%] h-30 rounded-md p-2 bg-white shadow-md " />
+                className="resize-none w-[96%] h-30 rounded-md p-2 bg-white shadow-md mb-4" />
 
               <button type="submit"
-                className="bg-[#e27500] w-[90%] h-10 rounded-md text-white shadow-md cursor-pointer
+                className="bg-[#e27500] w-[96%] h-10 rounded-md text-white shadow-md cursor-pointer
                   font-clash mb-5">Submit</button>
 
             </form>
@@ -487,21 +519,21 @@ const Hero = () => {
 
       {/* end footer section */}
       <section className="w-full h-[50vh] flex flex-col justify-center bg-[#eaeaea]">
-        <div class="w-full overflow-hidden whitespace-nowrap h-20">
-          <div class="flex w-full animate-marquee text-4xl " >
-            <span class="flex items-center gap-2 font-clash mx-4 font-bold text-[#333333]
+        <div className="w-full overflow-hidden whitespace-nowrap h-20">
+          <div className="flex w-full animate-marquee text-4xl " >
+            <span className="flex items-center gap-2 font-clash mx-4 font-bold text-[#333333]
             lg:text-6xl">
               <FaAsterisk /> Let's work together <FaAsterisk /> </span>
-            <span class="flex items-center gap-2 font-clash mx-4 font-bold text-[#333333]
+            <span className="flex items-center gap-2 font-clash mx-4 font-bold text-[#333333]
             lg:text-6xl">
               <FaAsterisk /> Let's work together <FaAsterisk /> </span>
-            <span class="flex items-center gap-2 font-clash mx-4 font-bold text-[#333333]
+            <span className="flex items-center gap-2 font-clash mx-4 font-bold text-[#333333]
             lg:text-6xl">
               <FaAsterisk /> Let's work together <FaAsterisk /> </span>
-            <span class="flex items-center gap-2 font-clash mx-4 font-bold text-[#333333]
+            <span className="flex items-center gap-2 font-clash mx-4 font-bold text-[#333333]
             lg:text-6xl">
               <FaAsterisk /> Let's work together <FaAsterisk /> </span>
-            <span class="flex items-center gap-2 font-clash mx-4 font-bold text-[#333333]
+            <span className="flex items-center gap-2 font-clash mx-4 font-bold text-[#333333]
             lg:text-6xl">
               <FaAsterisk /> Let's work together <FaAsterisk /> </span>
           </div>
@@ -510,14 +542,14 @@ const Hero = () => {
           <p className="flex items-center gap-2 font-semibold font-clash"><FaPhone />+91 9447572837</p>
           <p className="flex items-center gap-2 font-semibold font-clash"><FaEnvelope />syamjithLoq@mail.com</p>
         </div>
-        <div className="flex justify-between mt-8 h-30 ">
+        <div className="flex justify-between mt-8  ">
           <p className="mx-5 font-medium font-general text-[13px]">2026</p>
           <p className="mx-5 font-medium font-general text-[13px]">All Rights Reserved</p>
         </div>
       </section>
 
       <NavBar />
-      <BottomBlur/>
+      <BottomBlur />
 
     </div>
   );
