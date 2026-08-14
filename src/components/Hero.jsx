@@ -489,7 +489,7 @@ const Hero = () => {
 
               <label className="font-general text-[#333333]">Your Full Name*</label>
               <input type="text" placeholder="Smith"
-                className="w-[96%] h-10 rounded-md  bg-white shadow-md mb-4" />
+                className="w-[96%] h-10 rounded-md pl-2 bg-white shadow-md mb-4" />
 
               <label className="font-general text-[#333333]">Your E-mail*</label>
               <input type="email" placeholder="mail@gmail.com"
