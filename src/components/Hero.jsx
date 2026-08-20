@@ -216,47 +216,26 @@ const Hero = () => {
   return (
     <div ref={containerRef}>
       {/* ==================== HERO ==================== */}
-
-      <section
-        id="home"
+      <section id="home"
         ref={heroSectionRef}
-        aria-labelledby="hero-title"
         className="relative w-full h-screen bg-[#eaeaea]"
       >
-        {/* Desktop background video.
-            The source is only selected on screens >= 640px.
-            This prevents the large video from becoming an unnecessary
-            mobile network request. */}
+
+        {/* Background Video */}
 
         <video
           autoPlay
           muted
           loop
           playsInline
-          preload="metadata"
-          poster={myImage}
-          aria-hidden="true"
-          className="absolute inset-0 hidden sm:block w-full h-screen object-cover"
+          className="absolute inset-0 w-full h-screen  object-cover"
         >
           <source
             src={heroVideo}
             type="video/mp4"
-            media="(min-width: 640px)"
           />
         </video>
 
-        {/* Mobile poster image */}
-
-        <img
-          src={myImage}
-          alt=""
-          width="240"
-          height="280"
-          fetchPriority="high"
-          decoding="async"
-          aria-hidden="true"
-          className="absolute inset-0 block sm:hidden w-full h-screen object-cover"
-        />
 
         {/* Overlay */}
 
@@ -288,7 +267,7 @@ const Hero = () => {
 
             <h1
               id="hero-title"
-              className="text-2xl pt-4 font-clash text-center"
+              className="px-6 text-2xl pt-4 font-clash text-center"
             >
               Freelance Web Developer in Kannur, Kerala
             </h1>
