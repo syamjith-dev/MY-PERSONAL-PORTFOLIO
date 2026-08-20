@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import NavBar from "./NavBar";
 import BottomBlur from "./BottomBlur";
 
-import heroVideo from "../assets/video/bg-white-hexagon-video.mp4";
+import heroVideo from "../../public/video/bg-white-hexagon-video.mp4";
 import myImage from "../assets/images/myImage.webp";
 
 import {
@@ -241,7 +241,7 @@ const Hero = () => {
 
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-linear-to-t from-[#eaeaea] to-[#eaeaea75]"
+          className="absolute inset-0 bg-linear-to-t from-[#eaeaea] to-[#eaeaea90]"
         />
 
         {/* Hero Content */}
