@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import NavBar from "./NavBar";
 import BottomBlur from "./BottomBlur";
 
-import heroVideo from "../../public/video/bg-white-hexagon-video.mp4";
+import heroVideo from "../assets/video/bg-white-hexagon-video.mp4";
 import myImage from "../assets/images/myImage.webp";
 
 import {
