@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import NavBar from "./NavBar";
 import BottomBlur from "./BottomBlur";
 
-import heroVideo from "../assets/video/bg-white-hexagon-video.mp4";
+// import heroVideo from "../assets/video/bg-white-hexagon-video.mp4";
 import myImage from "../assets/images/myImage.webp";
 
 import {
@@ -229,11 +229,9 @@ const Hero = () => {
           loop
           playsInline
           className="absolute inset-0 w-full h-screen  object-cover"
+          poster="/images/portfolio-video-poster.webp"
         >
-          <source
-            src={heroVideo}
-            type="video/mp4"
-          />
+          <source src="video/syamjith-portfolio-showreel.mp4" type="video/mp4" />
         </video>
 
 
@@ -619,9 +617,8 @@ const Hero = () => {
 
                   <span
                     aria-hidden="true"
-                    className={`text-2xl transition-transform duration-300 ${
-                      isOpen ? "rotate-45" : "rotate-0"
-                    }`}
+                    className={`text-2xl transition-transform duration-300 ${isOpen ? "rotate-45" : "rotate-0"
+                      }`}
                   >
                     +
                   </span>
@@ -631,11 +628,10 @@ const Hero = () => {
                   id={`faq-answer-${faq.id}`}
                   role="region"
                   aria-hidden={!isOpen}
-                  className={`grid transition-all duration-500 ease-in-out ${
-                    isOpen
+                  className={`grid transition-all duration-500 ease-in-out ${isOpen
                       ? "grid-rows-[1fr] opacity-100 mt-5"
                       : "grid-rows-[0fr] opacity-0 mt-0"
-                  }`}
+                    }`}
                 >
                   <div className="overflow-hidden">
                     <p className="pb-4 text-[#333333] leading-relaxed font-general">
