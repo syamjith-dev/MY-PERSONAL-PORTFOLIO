@@ -231,7 +231,7 @@ const Hero = () => {
           className="absolute inset-0 w-full h-screen  object-cover"
           poster="/images/portfolio-video-poster.webp"
         >
-          <source src="video/syamjith-portfolio-showreel.mp4" type="video/mp4" />
+          <source src="/video/syamjith-portfolio-showreel.mp4" type="video/mp4" />
         </video>
 
 
