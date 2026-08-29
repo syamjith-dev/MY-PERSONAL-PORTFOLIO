@@ -322,7 +322,7 @@ const Hero = () => {
 
           <div className="flex gap-4 pt-5">
             <a
-              href="#"
+              href="" target="blank"
               aria-label="LinkedIn profile"
               className="social-icon flex justify-center items-center w-12 h-12 rounded-2xl shadow-lg border-2 border-[#0000001d] hover:bg-[#E27500] hover:text-white hover:border-0 transition-all duration-500"
             >
@@ -333,7 +333,7 @@ const Hero = () => {
             </a>
 
             <a
-              href="#"
+              href="https://github.com/syamjith-dev" target="blank"
               aria-label="GitHub profile"
               className="social-icon flex justify-center items-center w-12 h-12 rounded-2xl shadow-lg border-2 border-[#0000001d] hover:bg-[#E27500] hover:text-white hover:border-0 transition-all duration-500"
             >
@@ -344,7 +344,7 @@ const Hero = () => {
             </a>
 
             <a
-              href="#"
+              href="https://instagram.com/im_syam_jith" target="blank"
               aria-label="Instagram profile"
               className="social-icon flex justify-center items-center w-12 h-12 rounded-2xl shadow-lg border-2 border-[#0000001d] hover:bg-[#E27500] hover:text-white hover:border-0 transition-all duration-500"
             >
@@ -355,7 +355,7 @@ const Hero = () => {
             </a>
 
             <a
-              href="#"
+              href="https://whatsapp.com/syamjith" target="blank"
               aria-label="WhatsApp"
               className="social-icon flex justify-center items-center w-12 h-12 rounded-2xl shadow-lg border-2 border-[#0000001d] hover:bg-[#E27500] hover:text-white hover:border-0 transition-all duration-500"
             >
