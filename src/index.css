@@ -48,6 +48,6 @@ html {
 }
 
 .heroBg {
-  background-image: url('src/assets/images/heroBg.webp');
+  background-image: url('./assets/images/heroBg.webp');
   background-size: cover;
 }
