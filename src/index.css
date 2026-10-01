@@ -47,4 +47,7 @@ html {
   animation: marquee 8s linear infinite;
 }
 
-
+.heroBg {
+  background-image: url('src/assets/images/heroBg.webp');
+  background-size: cover;
+}

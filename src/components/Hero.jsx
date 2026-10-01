@@ -5,8 +5,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import NavBar from "./NavBar";
 import BottomBlur from "./BottomBlur";
 
-// import heroVideo from "../assets/video/bg-white-hexagon-video.mp4";
 import myImage from "../assets/images/myImage.webp";
+import heroImg from "../assets/images/heroBg.webp"
 
 import {
   FaLinkedin,
@@ -218,22 +218,8 @@ const Hero = () => {
       {/* ==================== HERO ==================== */}
       <section id="home"
         ref={heroSectionRef}
-        className="relative w-full h-screen bg-[#eaeaea]"
+        className="heroBg relative w-full h-screen bg-[#eaeaea]"
       >
-
-        {/* Background Video */}
-
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 w-full h-screen  object-cover"
-          poster="/images/portfolio-video-poster.webp"
-        >
-          <source src="/video/syamjith-portfolio-showreel.mp4" type="video/mp4" />
-        </video>
-
 
         {/* Overlay */}
 
